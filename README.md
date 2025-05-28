@@ -8,7 +8,7 @@ This repository provides resources to apply a semi-automated method to identify 
 
 ## Example Use Case
 
-The python_script_LFI.py script has been applied above to three Sentinel-1 EW images from March–April 2025 over Bylot Sound, western Northern Greenland. The output `gradient.tif` helps users identify where ice remained fixed throughout the 20-day span — allowing for delineation of the landfast ice seaward edge in GIS.  
+The python_script_LFI.py script has been applied above to three Sentinel-1 EW images from March–April 2025 over Bylot Sound, Northwest Greenland. The output `gradient.tif` helps users identify where ice remained fixed throughout the 20-day span — allowing for delineation of the landfast ice seaward edge in GIS.  
 
 ---
 
