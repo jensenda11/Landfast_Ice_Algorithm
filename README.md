@@ -27,7 +27,7 @@ The python_script_LFI.py script has been applied above to three Sentinel-1 EW im
    Download and install ESA’s [Sentinel Application Platform (SNAP)](https://step.esa.int/main/download/). This software is required to pre-process Sentinel-1 SAR imagery. Follow your operating system's instructions for installation.
 
 2. **Download SAR Imagery**  
-   Download three Sentinel-1 EW satellite images taken within a ~20 day window as zipped `.zip` archives from the [Alaska Satellite Facility Data Portal](https://search.asf.alaska.edu/). These files do **not** need to be unzipped to be loaded into SNAP.
+   Download three Sentinel-1 Extra Wide (EW) beam mode satellite images (L1 File Type) taken within a ~20 day window as zipped `.zip` archives from the [Alaska Satellite Facility Data Portal](https://search.asf.alaska.edu/). These files do **not** need to be unzipped to be loaded into SNAP.
 
 3. **Pre-process in SNAP**  
    Load the `.xml` graph (`S1_EW_batchprocessing.xml`) into ESA's **Sentinel Application Platform (SNAP)** using the batch processing window. Add the three loaded Sentinel-1 images, select the output folder as the location where `python_script_LFI.py` is stored, and click run. The output should be GeoTIFFs (`.tif`) stored in the same directory as the Python script.
