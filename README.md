@@ -17,7 +17,7 @@ The python_script_LFI.py script has been applied above to three Sentinel-1 EW im
 | File | Description |
 |------|-------------|
 | `S1_EW_batchprocessing.xml` | SNAP graph for batch pre-processing of Sentinel-1 EW imagery |
-| `python_script_LFI.py` | Python script to immobile coastal sea ice using net gradient difference |
+| `python_script_LFI.py` | Python script to identify immobile coastal sea ice using net gradient difference |
 
 ---
 
