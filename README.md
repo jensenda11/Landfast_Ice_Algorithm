@@ -1,43 +1,46 @@
 
 # Detecting Landfast Sea Ice Using Sentinel-1 SAR Imagery
 
-This repository provides a semi-automated method for identifying *landfast sea ice* using Synthetic Aperture Radar (SAR) imagery. Designed primarily for **Sentinel-1 Extra Wide (EW)** images sourced from the **Alaska Satellite Facility (ASF)**, this workflow uses a gradient-based approach to detect areas of **coastal ice that exhibit no motion** over a ~20-day window.
+This repository provides resources to apply a semi-automated method to identify *landfast sea ice* using Synthetic Aperture Radar (SAR) imagery. Designed primarily for Sentinel-1 Extra Wide (EW) images sourced from the Alaska Satellite Facility (ASF), this workflow uses a gradient-based approach to detect areas of coastal ice that exhibit no motion over a ~20-day window.
 
 ![gif_final](https://github.com/user-attachments/assets/74ce4433-8885-414d-944e-de6230352f10)
 
 
 ## Example Use Case
 
-The python_script_LFI.py script has been applied above to three Sentinel-1 EW images from **March–April 2025** over **Bylot Sound, western Northern Greenland**. The output `gradient.tif` helps users identify where ice remained fixed throughout the 20-day span — allowing for delineation of the landfast ice seaward edge in GIS.  
+The python_script_LFI.py script has been applied above to three Sentinel-1 EW images from March–April 2025 over Bylot Sound, western Northern Greenland. The output `gradient.tif` helps users identify where ice remained fixed throughout the 20-day span — allowing for delineation of the landfast ice seaward edge in GIS.  
 
 ---
 
-## What's Inside
+## What's Included
 
 | File | Description |
 |------|-------------|
 | `S1_EW_batchprocessing.xml` | SNAP graph for batch pre-processing of Sentinel-1 EW imagery |
-| `python_script_LFI.py` | Python script to identify stable coastal sea ice using net gradient difference |
+| `python_script_LFI.py` | Python script to immobile coastal sea ice using net gradient difference |
 
 ---
 
 ## How It Works
 
-1. **Download SAR Imagery**  
-   Download three Sentinel-1 EW scenes as zipped `.zip` archives from the [Alaska Satellite Facility Data Portal](https://search.asf.alaska.edu/). These files do **not** need to be unzipped to be loaded into SNAP.
+1. **Download and Install SNAP (Sentinel Application Platform)**  
+   Download and install ESA’s [Sentinel Application Platform (SNAP)](https://step.esa.int/main/download/). This software is required to pre-process Sentinel-1 SAR imagery. Follow your operating system's instructions for installation.
 
-2. **Pre-process in SNAP**  
-   Load the `.xml` graph (`S1_EW_batchprocessing.xml`) into ESA's **Sentinel Application Platform (SNAP)**. Use it to batch-process the three zipped scenes. The output should be GeoTIFFs (`.tif`) stored in the same directory as the Python script.
+2. **Download SAR Imagery**  
+   Download three Sentinel-1 EW satellite images taken within a ~20 day window as zipped `.zip` archives from the [Alaska Satellite Facility Data Portal](https://search.asf.alaska.edu/). These files do **not** need to be unzipped to be loaded into SNAP.
 
-3. **Run the Analysis**  
+3. **Pre-process in SNAP**  
+   Load the `.xml` graph (`S1_EW_batchprocessing.xml`) into ESA's **Sentinel Application Platform (SNAP)** using the batch processing window. Add the three loaded Sentinel-1 images, select the output folder as the location where `python_script_LFI.py` is stored, and click run. The output should be GeoTIFFs (`.tif`) stored in the same directory as the Python script.
+
+4. **Run the Analysis**  
    Open a terminal in the working directory and run:
 
         python python_script_LFI.py
 
-   The script calculates **net gradient differences** between the images to flag areas with consistent pixel intensities — indicative of landfast sea ice.
+   The script calculates the horizontal and vertical gradient fields of each image, before performing a net gradient difference between all three images. 
 
-4. **Get Your Output**  
-   A new file, `gradient.tif`, will appear in the working directory. It highlights stable ice features along coastlines.
+6. **Get Your Output**  
+   A new file, `gradient.tif`, will appear in the working directory. Areas of low net gradient difference (darker regions in the example gif above) indicate areas of sea ice that exhibited less motion over the ~20 day window. The seaward edge becomes apparent as the coast-adjacent transitory boundary between lower and higher net gradient difference. The seaward edge can now be delineated in GIS, and any sea ice between the edge and the coastline is continuous landfast ice cover. 
 
 ---
 
