@@ -51,7 +51,7 @@ The python_script_LFI.py script has been applied above to three Sentinel-1 EW im
 | RAM  | 32 GB (16 GB minimum) |
 | OS   | Linux, macOS, or Windows with Python 3 |
 | SNAP | ESA SNAP Toolbox (tested with v9 or later) |
-| Python | `numpy`, `gdal`, `rasterio`, `matplotlib` |
+| Python | `numpy`, `scipy`, `gdal`, `rasterio`|
 
 > If memory crashes occur, mask the `.tif` images to a smaller **Region of Interest (ROI)** before running the script.
 
