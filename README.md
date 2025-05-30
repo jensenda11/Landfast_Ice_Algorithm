@@ -64,9 +64,10 @@ The python_script_LFI.py script has been applied above to three Sentinel-1 EW im
 - Mahoney, A., Eicken, H., Graves, A., Shapiro, L., & Cotter, P. (2004, September). Landfast sea ice extent and variability in the Alaskan Arctic derived from SAR imagery. In IGARSS 2004. 2004 IEEE International Geoscience and Remote Sensing Symposium (Vol. 3, pp. 2146-2149). IEEE.
 
 ### Studies Using This Methodology
-- Jensen, D., Mahoney, A., & Resler, L. (2020). The annual cycle of landfast ice in the eastern Bering Sea. Cold Regions Science and Technology, 174, 103059.
 
 - Jensen, D. A., Nandan, V., Mahoney, A. R., Yackel, J. J., & Resler, L. M. (2023). Landfast sea ice break out patterns in the northern Bering Sea observed from C-band Synthetic Aperture Radar. International Journal of Applied Earth Observation and Geoinformation, 117, 103183.
+
+- Jensen, D., Mahoney, A., & Resler, L. (2020). The annual cycle of landfast ice in the eastern Bering Sea. Cold Regions Science and Technology, 174, 103059.
   
 - Mahoney, A. R., Eicken, H., Gaylord, A. G., & Gens, R. (2014). Landfast sea ice extent in the Chukchi and Beaufort Seas: The annual cycle and decadal variability. Cold Regions Science and Technology, 103, 41-56.
 
